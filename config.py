@@ -3,7 +3,8 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql://dev:dev@localhost:5434/api'
+    """Cambiar admin por tu usuario y password por tu contraseña"""
+    SQLALCHEMY_DATABASE_URI = 'postgresql://admin:password@localhost:5432/api'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
