@@ -2,10 +2,11 @@ from . import db
 
 class Person(db.Model):
     __tablename__ = 'persons'
+
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(50), nullable=False)
     correo = db.Column(db.Text)
-    kmcaminados =  db.Column(db.Integer)
+    kmcaminados =  db.Column(db.Text, nullable=False)
     FechaCaptura = db.Column(db.DateTime(), nullable=False, default=db.func.current_timestamp())
 
 
@@ -18,6 +19,7 @@ class Person(db.Model):
         try:
             db.session.add(self)
             db.session.commit()
+            
             return True
         except:
             return False

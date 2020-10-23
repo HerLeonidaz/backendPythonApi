@@ -1,4 +1,9 @@
-curl -i -H "Content-type: application/json" -X POST -d '{"nombre": "Leo","correo": "j@gmail.com","kmcaminados": 5}' http://127.0.0.1:5000/api/v1/persons
+curl -i -H "Content-type: application/json" -X POST -d '{"nombre": "Leo", "correo": "j@gmail.com", "kmcaminados": 5}' http://127.0.0.1:5000/api/v1/persons
 
 
 curl -X POST --header 'Content-Type: application/json' --data '{"nombre":"alfa","correo":"list@gmail","kmcaminados":5}' http://localhost:5000/api/v1/persons
+
+
+
+
+curl -X POST -H 'Content-Type: application/json' http://127.0.0.1:5000/api/v1 -d '{"nombre": "Alice","correo": "L@gmail.com","kmcaminados": 6}'

@@ -16,7 +16,6 @@ def get_persons():
 @api_v1.route('/persons', methods=['POST'])
 def create_person():
     json = request.get_json(force=True)
-    
     if json.get('nombre') is None or len(json['nombre']) > 50:
         return bad_request()
     
@@ -26,8 +25,8 @@ def create_person():
     if json.get('kmcaminados') is None:
         return bad_request()
     
-    #if json.get('kmcaminados') < 4 :
-    #    return response({'message':'Debes de caminar más'}) 
+    if int(json.get('kmcaminados')) < 4 :
+        return response({'message':'Debes de caminar más'}) 
     
     person = Person.new(json['nombre'], json['correo'], json['kmcaminados'])
     if person.save():
